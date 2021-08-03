@@ -45,16 +45,17 @@ def scrapeBB(z):
              'The BBC is not responsible', 'Read about our', '©',
              'Let us know you agree to cookies', '2021 BBC',
              'The BBC is not responsible for the content of external sites.', 'Read about our approach to external linking.']
-
+#b lists all the information to let the user know their data will be used
         for j in range(0, len(textarticle)):  #textarticle is the variable created from the previous lines of codes
 
             # adverts
-
             if (textarticle[j].find_all('i') == []): #for each text article within the range of possible text articles
-                #if ele
-                t = textarticle[j].getText()
-                if any(x in t for x in a):
-                    if all(w not in t for w in b):
+                #if statement creates the following if there is a empty list within text article, i elements
+                t = textarticle[j].getText() #find all the text
+                if any(x in t for x in a): #x is a variable within the variable that extracts all text #recall a stores all punctuation
+                   #so for any x stored inside the variable that stores text, while x also is a puncuation --> Way to read the line
+                    if all(w not in t for w in b): #w is a variable within the variable that does not extract all text #recsall b displays information about cookies
+                        #so for any w not in the variable that stores text, while  w is also inside the variable that stores information
                         text.append(t)
 
                 else:
