@@ -111,4 +111,5 @@ def scrapeBB(z):
         # finddate1.append(date2)
         finddate2.append(find_date(z[i])) #append based on find_date
         # print(finddate,findtitle,findauthors,findcategory,finaltext)
-    return finddate, finddate2, findtitle, findauthors, findcategory, finaltext
+    return finddate, finddate2, findtitle, findauthors, findcategory, finaltext #return variable of interest
+
