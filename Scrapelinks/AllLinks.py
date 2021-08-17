@@ -1,15 +1,15 @@
 
-from Scrapelinks import FindAuthors, Titlefunc, Categoryfunc, Date
-import Webdriver
-from bs4 import BeautifulSoup
+from Scrapelinks import FindAuthors, Titlefunc, Categoryfunc, Date #from the file, import relevant functions through accessing the relevant files
+import Webdriver #helps you scrape websites
+from bs4 import BeautifulSoup #package needed to convert url link to html type
 from htmldate import find_date
-
-driver = Webdriver.Webdrivercode.driver
-authorsfunc = FindAuthors.authorsfunc
-titlefunc = Titlefunc.titlefunc
-categoryfunc = Categoryfunc.categoryfunc
+#PACKAGE manages all steps from webpage download to html parsing including text and scrape analysis; allows robust date extraction.
+driver = Webdriver.Webdrivercode.driver #Use driver function
+authorsfunc = FindAuthors.authorsfunc # use Authorfunc
+titlefunc = Titlefunc.titlefunc #use titlefunc
+categoryfunc = Categoryfunc.categoryfunc #use categoryfunc
 # scrape every single links and find texts
-datefunc = Date.datefunc
+datefunc = Date.datefunc #use datefunc
 
 def scrapeBB(z):
     finaltext = [] #to store all final text
