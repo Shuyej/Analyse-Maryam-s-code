@@ -11,7 +11,7 @@ categoryfunc = Categoryfunc.categoryfunc #use categoryfunc
 # scrape every single links and find texts
 datefunc = Date.datefunc #use datefunc
 
-def scrapeBB(z):
+def scrapeBB(z): #Function scrapes website links and returns all empty list defined from line 15 to 20, with values
     finaltext = [] #to store all final text
     finddate = []  #to store all dates
     finddate2 = [] #to store more dates

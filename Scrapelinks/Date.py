@@ -3,7 +3,7 @@ import datetime as dt
 from htmldate import find_date
 
 # find date
-def datefunc(tilli):
+def datefunc(tilli): #function returns the time element of the object tilli or None
     datepuff = tilli.find_all('time')
     #variable datepuff stores values from tilli and its time elements. This varies accordign to the variable passed thriugh the paranthesis (for which is recognised as Tilli)
 

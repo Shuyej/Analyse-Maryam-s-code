@@ -7,7 +7,7 @@ from Webdriver import Webdrivercode #File webdrivercode will be used which has f
 driver = Webdrivercode.driver
 # scrape links
 
-def scrapeBBlinks(x):
+def scrapeBBlinks(x): #function returns elements related to link address
     url = x #variable passed through the paranthesis is stored in the variable url
     response = driver.get(url) #use webdriver to get the URL and store it inside variable response
 

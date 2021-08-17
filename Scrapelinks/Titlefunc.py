@@ -4,7 +4,7 @@ import Scrapelinks
 from bs4 import BeautifulSoup
 
 # find title
-def titlefunc(tilli):
+def titlefunc(tilli): #function returns the text of the h1 tag of the variable passed through the paranthesis.
     Title = tilli.find_all('h1')
 #variable Title stores all h1 elements of the variable tilli passing through the paranthesis
 

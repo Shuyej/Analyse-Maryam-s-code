@@ -2,7 +2,7 @@
 from bs4 import BeautifulSoup
 
 #find authors
-def authorsfunc(tilli):
+def authorsfunc(tilli): #Function returns the list authauth which is based of p tag of the class ssrcss and its text
     #authors=tilli.find_all('p', class_='ssrcss-1a9jc18-Contributor e5xb54n1')
 
     authors = tilli.find_all('p', class_='ssrcss-1a9jc18-Contributor e5xb54n2')
