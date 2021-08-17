@@ -3,6 +3,8 @@ import random
 import Scrapelinks
 from bs4 import BeautifulSoup
 from Scrapelinks.BBClinks import *
+from Scrapelinks.AllLinks import *
+
 #Example:
 
 # find menu
@@ -10,77 +12,45 @@ from Scrapelinks.BBClinks import *
 # =============================================================================
 
 # def menu1(homelink):
-
 #     driver.get(homelink)
-
 #     #time.sleep(random.randint(1,20))
-
 #     #py.scroll(-(random.randint(200,1000)))
-
 #     html=driver.page_source
-
 #     doc=BeautifulSoup(html,'html.parser')
-
 #     tabs=doc.find_all(class_='nw-o-link')
-
 #     tabshref=[]
-
 #     http=[]
-
 #     https=[]
-
 #     dotcom=[]
 
 #     linkx='https://www.bbc.co.uk'
 
 #     for tab in tabs:
-
 #         if ('href' in str(tab))==True:
-
 #             tabhref=(tab['href'])
-
 #             if ('http' in str(tabhref))==True:
-
 #                 http.append(tabhref)
-
 #             elif ('https' in str(tabhref))==True:
-
 #                 https.append(tabhref)
-
 #             elif ('.com' in str(tabhref))==True:
-
 #                 dotcom.append(tabhref)
-
 #             else:
-
 #                 linky=linkx+tabhref
-
 #                 tabshref.append(linky)
 
 #     uniquetabshrefpuff=set(tabshref)
-
 #     uniquetabshrefpuff=list(uniquetabshrefpuff)
-
 #     uniquetabshref=[]
 
 #     for listunique in uniquetabshrefpuff:
-
 #         if ('news' in str(listunique)) ==True:
-
 #             uniquetabshref.append(listunique)
-
 #         else:
-
 #             continue
-
 #     ##################################
-
 #
-
 #     listfinale=uniquetabshref
-
 #     listfinale1=set(listfinale)
-
 #     listfinale1=list(listfinale1)
 
 #     return listfinale1
@@ -104,20 +74,23 @@ menu = ['https://www.bbc.co.uk/news/technology', 'https://www.bbc.co.uk/news/bus
         'https://www.bbc.co.uk/news/newsbeat', 'https://www.bbc.co.uk/news/stories',
         'https://www.bbc.co.uk/news/coronavirus', 'https://www.bbc.co.uk/news/have_your_say',
         'https://www.bbc.co.uk/news/topics/cvenzmgyww4t/space-exploration',
-        'https://www.bbc.co.uk/news/topics/c4y3wxdx24nt/our-planet-now']
+        'https://www.bbc.co.uk/news/topics/c4y3wxdx24nt/our-planet-now'] #list of all URLs of interest
 
-linksall = []
+linksall = [] #create a empty list to store all data
 
-for i in range(0, len(menu)):
+for i in range(0, len(menu)): #create the sequence for which the BBlinks will be appended based of each element from menu
+        #length of array is based off menu
     linksall.append(scrapeBBlinks(menu[i]))
 
-totallinksall = linksall[0]
+totallinksall = linksall[0] #Store first elements of the array linksall inside totallinksall
 
-for i in range(1, len(linksall)):
-    totallinksall = totallinksall + linksall[i]
+for i in range(1, len(linksall)): #The sequence is based of the length from 1 to linksall whrre links all has elements stored from the functions scrapeBBlinks
+    totallinksall = totallinksall + linksall[i]  #total linksall ammended from the initial value of linksall[0] adding further elements i.e. from 1 to len(linksall)
 
-uniquetotallinks = set(totallinksall)
+uniquetotallinks = set(totallinksall) #convert the variable totallinksall with iteretable elements to distinct elements
+# An iteration is when is a repetition of a process, since totallinksall has elements added it is a iterated process
 uniquetotallinks = list(uniquetotallinks)
+#list takes a iteratble object which is uniquetotallinks and adds its element to a newly created list
 uniquetotallinks1 = []
 
 a = ['/news/', '/articles/', '/article/']
@@ -128,5 +101,6 @@ for i in range(0, len(uniquetotallinks)):
         uniquetotallinks1.append(uniquetotallinks[i])
 
 # pd.DataFrame(uniquetotallinks).to_csv(r'C:\Users\44798\links.csv')
-
 d, d1, ttl, auth, catg, txt = scrapeBBlinks(uniquetotallinks[:10])
+
+scrapeBB(menu)

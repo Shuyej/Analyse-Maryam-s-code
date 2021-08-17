@@ -12,7 +12,7 @@ from pyvirtualdisplay import Display
 import pandas as pd
 
 def convert(set):
-    return [*set, ]
+    return [*set, ] #set stores multiple items into a single variable of which is *set
 
 
 
