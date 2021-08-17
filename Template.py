@@ -91,7 +91,7 @@ uniquetotallinks = set(totallinksall) #convert the variable totallinksall with i
 # An iteration is when is a repetition of a process, since totallinksall has elements added it is a iterated process
 uniquetotallinks = list(uniquetotallinks)
 #list takes a iteratble object which is uniquetotallinks and adds its element to a newly created list
-uniquetotallinks1 = []
+uniquetotallinks1 = [] #create an empty list
 
 a = ['/news/', '/articles/', '/article/']
 b = ['send']
