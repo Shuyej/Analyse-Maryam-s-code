@@ -1,7 +1,3 @@
-
-def convert(set): #function converts multiple items into a single variable
-    return [*set, ] #set stores multiple items into a single variable of which is *set
-
 # scrape all links on the website and find link category
 # ul='https://www.bbc.co.uk/news'
 # listlinks=menu1(ul)

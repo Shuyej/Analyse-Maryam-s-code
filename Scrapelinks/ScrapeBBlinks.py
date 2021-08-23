@@ -1,4 +1,6 @@
-import Scrapelinks.BBClinks
+from Scrapelinks.BBClinks import * #utilise all functions from file BBClinks
+
+
 
 linksall = [] #create a empty list to store all data
 
@@ -33,4 +35,7 @@ for i in range(0, len(uniquetotallinks)):
 # pd.DataFrame(uniquetotallinks).to_csv(r'C:\Users\44798\links.csv')
 d, d1, ttl, auth, catg, txt = scrapeBBlinks(uniquetotallinks[:10])
 #each of the elements of unique totallinks up to the sequence 10, go through the function scrapeBBlinks
+
+def convert(set): #function converts multiple items into a single variable
+    return [*set, ] #set stores multiple items into a single variable of which is *set
 
